@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>作业1.md</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+	<style>
+		/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+		/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+		body {
+			font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+			font-size: var(--vscode-markdown-font-size, 14px);
+			padding: 0 26px;
+			line-height: var(--vscode-markdown-line-height, 22px);
+			word-wrap: break-word;
+		}
+
+		#code-csp-warning {
+			position: fixed;
+			top: 0;
+			right: 0;
+			color: white;
+			margin: 16px;
+			text-align: center;
+			font-size: 12px;
+			font-family: sans-serif;
+			background-color: #444444;
+			cursor: pointer;
+			padding: 6px;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+		}
+
+		#code-csp-warning:hover {
+			text-decoration: none;
+			background-color: #007acc;
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+		}
+
+		body.scrollBeyondLastLine {
+			margin-bottom: calc(100vh - 22px);
+		}
+
+		body.showEditorSelection .code-line {
+			position: relative;
+		}
+
+		body.showEditorSelection .code-active-line:before,
+		body.showEditorSelection .code-line:hover:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -12px;
+			height: 100%;
+		}
+
+		body.showEditorSelection li.code-active-line:before,
+		body.showEditorSelection li.code-line:hover:before {
+			left: -30px;
+		}
+
+		.vscode-light.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(0, 0, 0, 0.15);
+		}
+
+		.vscode-light.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(0, 0, 0, 0.40);
+		}
+
+		.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		.vscode-dark.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(255, 255, 255, 0.4);
+		}
+
+		.vscode-dark.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(255, 255, 255, 0.60);
+		}
+
+		.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(255, 160, 0, 0.7);
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(255, 160, 0, 1);
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a:focus,
+		input:focus,
+		select:focus,
+		textarea:focus {
+			outline: 1px solid -webkit-focus-ring-color;
+			outline-offset: -1px;
+		}
+
+		hr {
+			border: 0;
+			height: 2px;
+			border-bottom: 2px solid;
+		}
+
+		h1 {
+			padding-bottom: 0.3em;
+			line-height: 1.2;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+		}
+
+		h1,
+		h2,
+		h3 {
+			font-weight: normal;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table>thead>tr>th {
+			text-align: left;
+			border-bottom: 1px solid;
+		}
+
+		table>thead>tr>th,
+		table>thead>tr>td,
+		table>tbody>tr>th,
+		table>tbody>tr>td {
+			padding: 5px 10px;
+		}
+
+		table>tbody>tr+tr>td {
+			border-top: 1px solid;
+		}
+
+		blockquote {
+			margin: 0 7px 0 5px;
+			padding: 0 16px 0 10px;
+			border-left-width: 5px;
+			border-left-style: solid;
+		}
+
+		code {
+			font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+			font-size: 1em;
+			line-height: 1.357em;
+		}
+
+		body.wordWrap pre {
+			white-space: pre-wrap;
+		}
+
+		pre:not(.hljs),
+		pre.hljs code>div {
+			padding: 16px;
+			border-radius: 3px;
+			overflow: auto;
+		}
+
+		pre code {
+			color: var(--vscode-editor-foreground);
+			tab-size: 4;
+		}
+
+		/** Theming */
+
+		.vscode-light pre {
+			background-color: rgba(220, 220, 220, 0.4);
+		}
+
+		.vscode-dark pre {
+			background-color: rgba(10, 10, 10, 0.4);
+		}
+
+		.vscode-high-contrast pre {
+			background-color: rgb(0, 0, 0);
+		}
+
+		.vscode-high-contrast h1 {
+			border-color: rgb(0, 0, 0);
+		}
+
+		.vscode-light table>thead>tr>th {
+			border-color: rgba(0, 0, 0, 0.69);
+		}
+
+		.vscode-dark table>thead>tr>th {
+			border-color: rgba(255, 255, 255, 0.69);
+		}
+
+		.vscode-light h1,
+		.vscode-light hr,
+		.vscode-light table>tbody>tr+tr>td {
+			border-color: rgba(0, 0, 0, 0.18);
+		}
+
+		.vscode-dark h1,
+		.vscode-dark hr,
+		.vscode-dark table>tbody>tr+tr>td {
+			border-color: rgba(255, 255, 255, 0.18);
+		}
+
+		@font-face {
+			font-family: Chinese Quote;
+			src: local("PingFang SC"), local("SimSun");
+			unicode-range: U+2018, U+2019, U+201c, U+201d;
+		}
+
+		@font-face {
+			font-family: Tahoma For Number;
+			src: local("Tahoma");
+			unicode-range: U+30-39;
+		}
+
+		@font-face {
+			font-family: Chinese Quote;
+			src: local("PingFang SC"), local("SimSun");
+			unicode-range: U+2018, U+2019, U+201c, U+201d;
+		}
+
+		.lei-md {
+			font-feature-settings: "tnum";
+			font-variant: tabular-nums;
+			-webkit-font-smoothing: antialiased;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			font-size: 14px;
+			font-family: Tahoma For Number, Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+			color: #262626;
+			line-height: 24px;
+			letter-spacing: 0.05em;
+			outline-style: none;
+			word-wrap: break-word;
+			-webkit-user-select: auto;
+			max-width: 752px;
+			padding: 0 32px;
+			margin-left: auto;
+			margin-right: auto;
+			border-color: #d0d7de;
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 6px;
+			padding-bottom: 32px;
+		}
+
+		.lei-md .left-div {
+			display: inline-block;
+			width: 49%;
+		}
+
+		.lei-md .right-div {
+			display: inline-block;
+			width: 49%;
+		}
+
+		.lei-md .right-div::after {
+			clear: both;
+		}
+
+		.lei-md ::selection {
+			color: inherit;
+			background: rgba(27, 162, 227, 0.2);
+		}
+
+		.lei-md h1,
+		.lei-md h2,
+		.lei-md h3,
+		.lei-md h4,
+		.lei-md h5,
+		.lei-md h6 {
+			margin-top: 0;
+			margin-bottom: 0;
+			white-space: normal;
+			color: #262626;
+			word-spacing: 1px;
+			font-weight: 700;
+		}
+
+		.lei-md h1 {
+			font-size: 28px;
+			line-height: 36px;
+			padding: 7px 0;
+		}
+
+		.lei-md h2 {
+			display: block;
+			font-size: 24px;
+			line-height: 32px;
+			padding: 7px 0;
+			border-bottom: 1px solid #eee;
+			margin-top: 24px;
+			margin-bottom: 16px;
+			font-weight: 600;
+			line-height: 3rem;
+		}
+
+		.lei-md h3 {
+			font-size: 20px;
+			line-height: 28px;
+			padding: 7px 0;
+		}
+
+		.lei-md h4 {
+			font-size: 16px;
+			line-height: 24px;
+			padding: 7px 0;
+		}
+
+		.lei-md h5 {
+			font-size: 14px;
+			line-height: 24px;
+			padding: 7px 0;
+		}
+
+		.lei-md h6 {
+			font-size: 14px;
+			line-height: 24px;
+			padding: 7px 0;
+			font-weight: 400;
+		}
+
+		.lei-md p {
+			display: block;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			min-height: 24px;
+			line-height: 24px;
+			white-space: normal;
+			margin: 0;
+			letter-spacing: 0.05em;
+			font-size: 14px;
+		}
+
+		.lei-md b,
+		.lei-md strong {
+			font-weight: bolder;
+		}
+
+		.lei-md sup {
+			top: -0.5em;
+		}
+
+		.lei-md sub {
+			bottom: -0.25em;
+		}
+
+		.lei-md sup,
+		.lei-md sub {
+			position: relative;
+			font-size: 75%;
+			line-height: 0;
+			vertical-align: baseline;
+		}
+
+		.lei-md a {
+			color: #096dd9;
+			text-decoration: none;
+			background-color: rgba(0, 0, 0, 0);
+			outline: none;
+			cursor: pointer;
+			-webkit-transition: color 0.3s;
+			transition: color 0.3s;
+			-webkit-text-decoration-skip: objects;
+		}
+
+		.lei-md a,
+		.lei-md a:active {
+			word-wrap: break-word;
+			color: #096dd9;
+		}
+
+		.lei-md a:hover {
+			color: #1890ff;
+		}
+
+		.lei-md img {
+			max-width: 100%;
+			vertical-align: middle;
+			border-style: none;
+			border-radius: 2px 2px;
+			display: inline-block;
+			opacity: 1;
+			text-align: left;
+			transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+			-webkit-user-select: all;
+			-moz-user-select: all;
+			-ms-user-select: all;
+			user-select: all;
+		}
+
+		.lei-md pre {
+			border-radius: 0;
+			border-width: 0;
+			background: #f9f9f9;
+			font-family: inherit;
+			font-size: inherit;
+			margin: 0;
+			white-space: pre;
+			word-wrap: normal;
+			line-height: inherit;
+			color: inherit;
+			z-index: 2;
+			-webkit-tap-highlight-color: transparent;
+			-webkit-font-variant-ligatures: contextual;
+			font-variant-ligatures: contextual;
+			position: relative;
+			padding: 16px;
+			overflow: visible;
+			border: 1px solid #e8e8e8;
+			border-radius: 2px 2px;
+			text-indent: 0;
+			overflow-y: scroll;
+			overflow-x: visible;
+		}
+
+		.lei-md code {
+			font-family: monospace;
+			font-size: inherit;
+			background-color: rgba(0, 0, 0, 0.06);
+			padding: 0 2px;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: 2px 2px;
+			line-height: inherit;
+			word-wrap: break-word;
+			text-indent: 0;
+			margin-left: 0.2em;
+			margin-right: 0.2em;
+		}
+
+		.lei-md pre code {
+			font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+			font-size: 13px;
+			line-height: 21px;
+			color: #595959;
+			direction: ltr;
+			background-color: transparent;
+			border: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.lei-md table {
+			position: relative;
+			table-layout: fixed;
+			border-collapse: collapse;
+			border-spacing: 0;
+			word-wrap: break-word;
+			word-break: normal;
+			margin: 0;
+			font-weight: 400;
+			box-sizing: border-box;
+			border: 1px solid #d9d9d9;
+			cursor: default;
+			width: 96%;
+		}
+
+		.lei-md tbody,
+		.lei-md tr,
+		.lei-md th,
+		.lei-md td {
+			margin: 0;
+			font-weight: 400;
+			box-sizing: border-box;
+		}
+
+		.lei-md table tr td,
+		.lei-md table tr th {
+			margin: 0;
+			font-weight: 400;
+			box-sizing: border-box;
+			min-width: 90px;
+			font-size: 14px;
+			white-space: normal;
+			word-wrap: break-word;
+			border: 1px solid #d9d9d9;
+			vertical-align: top;
+			padding: 4px 8px;
+			cursor: default;
+		}
+
+		.lei-md th {
+			background-color: #f0f0f0;
+			font-weight: bold;
+		}
+
+		.lei-md ul,
+		.lei-md ol {
+			margin: 0 0 0 3px;
+			padding: 0;
+			padding-left: 23px;
+		}
+
+		.lei-md li {
+			white-space: normal;
+			margin-left: 23px;
+		}
+
+		.lei-md>ul {
+			padding-left: 0;
+			list-style-type: disc;
+			display: flex;
+		}
+
+		.lei-md>ul>ul {
+			list-style-type: circle;
+		}
+
+		.lei-md>ul>ul>ul {
+			list-style-type: square;
+		}
+
+		.lei-md>ol {
+			padding-left: 0;
+			list-style-type: decimal;
+		}
+
+		.lei-md>ol>ol {
+			list-style-type: lower-alpha;
+		}
+
+		.lei-md>ol>ol>ol {
+			list-style-type: lower-roman;
+		}
+
+		.lei-md li,
+		.lei-md li p,
+		.lei-md li section,
+		.lei-md li a,
+		.lei-md li * {
+			font-size: 14px;
+		}
+
+		.lei-md hr {
+			box-sizing: border-box;
+			margin-top: -2px;
+			width: 100%;
+			height: 2px;
+			background-color: #e8e8e8;
+			padding: 0;
+			border: 1px solid rgba(0, 0, 0, 0);
+			overflow: visible;
+		}
+
+		.lei-md blockquote {
+			margin: 0 0 1em;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			padding-left: 1em;
+			margin-left: 0;
+			border-left: 3px solid #eee;
+			opacity: 0.6;
+		}
+
+		.lei-md.lei-md-auto-fix {
+			margin-top: 82px;
+			margin-bottom: 96px;
+		}
+
+		.lei-md.lei-md-auto-fix>h1,
+		.lei-md.lei-md-auto-fix>h2,
+		.lei-md.lei-md-auto-fix>h3,
+		.lei-md.lei-md-auto-fix>h4,
+		.lei-md.lei-md-auto-fix>h5,
+		.lei-md.lei-md-auto-fix>h6 {
+			margin-bottom: 1em;
+			margin-top: 2em;
+		}
+
+		.lei-md.lei-md-auto-fix>h1:first-child {
+			margin-top: 0;
+		}
+
+		.lei-md.lei-md-auto-fix>p,
+		.lei-md.lei-md-auto-fix>ul,
+		.lei-md.lei-md-auto-fix>ol,
+		.lei-md.lei-md-auto-fix>table,
+		.lei-md.lei-md-auto-fix>pre,
+		.lei-md.lei-md-auto-fix>hr,
+		.lei-md.lei-md-auto-fix>blockquote {
+			margin-bottom: 1.8em;
+		}
+
+		.lei-md kbd {
+			display: inline-block;
+			padding: 3px 5px;
+			font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+			line-height: 10px;
+			color: #24292f;
+			vertical-align: middle;
+			background-color: #f6f8fa;
+			border: solid 1px rgb(175 184 193 / 20%);
+			border-bottom-color: rgb(175 184 193 / 20%);
+			border-radius: 6px;
+			box-shadow: inset 0 -1px 0 rgb(175 184 193 / 20%);
+		}
+	</style>
+
+	<style>
+		/* Tomorrow Theme */
+		/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+		/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+		/* Tomorrow Comment */
+		.hljs-comment,
+		.hljs-quote {
+			color: #8e908c;
+		}
+
+		/* Tomorrow Red */
+		.hljs-variable,
+		.hljs-template-variable,
+		.hljs-tag,
+		.hljs-name,
+		.hljs-selector-id,
+		.hljs-selector-class,
+		.hljs-regexp,
+		.hljs-deletion {
+			color: #c82829;
+		}
+
+		/* Tomorrow Orange */
+		.hljs-number,
+		.hljs-built_in,
+		.hljs-builtin-name,
+		.hljs-literal,
+		.hljs-type,
+		.hljs-params,
+		.hljs-meta,
+		.hljs-link {
+			color: #f5871f;
+		}
+
+		/* Tomorrow Yellow */
+		.hljs-attribute {
+			color: #eab700;
+		}
+
+		/* Tomorrow Green */
+		.hljs-string,
+		.hljs-symbol,
+		.hljs-bullet,
+		.hljs-addition {
+			color: #718c00;
+		}
+
+		/* Tomorrow Blue */
+		.hljs-title,
+		.hljs-section {
+			color: #4271ae;
+		}
+
+		/* Tomorrow Purple */
+		.hljs-keyword,
+		.hljs-selector-tag {
+			color: #8959a8;
+		}
+
+		.hljs {
+			display: block;
+			overflow-x: auto;
+			color: #4d4d4c;
+			padding: 0.5em;
+		}
+
+		.hljs-emphasis {
+			font-style: italic;
+		}
+
+		.hljs-strong {
+			font-weight: bold;
+		}
+	</style>
+
+	<style>
+		/*
+ * Markdown PDF CSS
+ */
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+			padding: 0 12px;
+		}
+
+		pre {
+			background-color: #f8f8f8;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+			overflow-x: auto;
+			white-space: pre-wrap;
+			overflow-wrap: break-word;
+		}
+
+		pre:not(.hljs) {
+			padding: 23px;
+			line-height: 19px;
+		}
+
+		blockquote {
+			background: rgba(127, 127, 127, 0.1);
+			border-color: rgba(0, 122, 204, 0.5);
+		}
+
+		.emoji {
+			height: 1.4em;
+		}
+
+		code {
+			font-size: 14px;
+			line-height: 19px;
+		}
+
+		/* for inline code */
+		:not(pre):not(.hljs)>code {
+			color: #C9AE75;
+			/* Change the old color so it seems less like an error */
+			font-size: inherit;
+		}
+
+		/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+		.page {
+			page-break-after: always;
+		}
+	</style>
+
+	<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+	<div class="lei-md">
+		<h2 id="%E6%97%A5%E5%B8%B8%E8%A1%8C%E6%94%BF%E6%9C%8D%E5%8A%A1">日常行政服务</h2>
+		<ul>
+			<div class="left-div">
+				<li>前台服务
+					<ul>
+						<li>形象管理
+							<ul>
+								<li>个人形象</li>
+								<li>办公环境</li>
+							</ul>
+						</li>
+						<li>接待工作
+							<ul>
+								<li>到场来访接待
+									<ul>
+										<li>已预约</li>
+										<li>未预约</li>
+										<li>内部人员</li>
+										<li>无理取闹者</li>
+									</ul>
+								</li>
+								<li>电话来访接待</li>
+							</ul>
+						</li>
+						<li>物品转接</li>
+					</ul>
+				</li>
+				<li>会议服务与管理
+					<ul>
+						<li>会前准备
+							<ul>
+								<li>时间</li>
+								<li>地点</li>
+								<li>人员</li>
+								<li>需求</li>
+							</ul>
+						</li>
+						<li>环境准备
+							<ul>
+								<li>设备情况</li>
+								<li>环境
+									<ul>
+										<li>整洁</li>
+										<li>光线</li>
+										<li>桌椅</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>会中服务
+							<ul>
+								<li>无需记录
+									<ul>
+										<li>安静离场</li>
+									</ul>
+								</li>
+								<li>会议记录
+									<ul>
+										<li>基本信息</li>
+										<li>会议结果</li>
+									</ul>
+								</li>
+								<li>会中休息
+									<ul>
+										<li>物品补充</li>
+										<li>杂物清理</li>
+									</ul>
+								</li>
+								<li>突发情况</li>
+							</ul>
+						</li>
+						<li>会后管理
+							<ul>
+								<li>物品复位</li>
+								<li>场地清理</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</div>
+			<div class="right-div">
+				<li>宴请接待
+					<ul>
+						<li>宴前准备
+							<ul>
+								<li>地点
+									<ul>
+										<li>环境舒适</li>
+										<li>交通便利且私密</li>
+										<li>停车便利</li>
+									</ul>
+								</li>
+								<li>菜品
+									<ul>
+										<li>饮食习惯</li>
+										<li>特色菜品</li>
+										<li>饮品</li>
+										<li>健康丰盛</li>
+										<li>费用预估</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>宴请过程
+							<ul>
+								<li>接待引领</li>
+								<li><em><strong>座位顺序</strong></em></li>
+								<li>结账付款</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>差旅服务与管理
+					<ul>
+						<li>确定服务模式</li>
+						<li>人员服务
+							<ul>
+								<li>安全意识培养</li>
+								<li>差旅信息推送</li>
+								<li>辅助工具推荐</li>
+							</ul>
+						</li>
+						<li>制定差旅规则
+							<ul>
+								<li>差旅范围</li>
+								<li>费用标准</li>
+								<li>申请流程</li>
+								<li>报销流程</li>
+								<li>安全管理</li>
+							</ul>
+						</li>
+						<li>差旅资源
+							<ul>
+								<li>直接利用 <kbd>常规</kbd></li>
+								<li>差旅管理 <kbd>外包</kbd></li>
+								<li>知识分享 <kbd>学习</kbd></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>收发服务</li>
+			</div>
+		</ul>
+
+		<h2 id="%E5%91%98%E5%B7%A5%E5%85%B3%E6%80%80%E6%B4%BB%E5%8A%A8">员工关怀活动</h2>
+		<ul>
+			<div class="left-div">
+				<li>员工福利
+					<ul>
+						<li>基本保障
+							<ul>
+								<li>饮食</li>
+								<li>交通</li>
+								<li>体检</li>
+							</ul>
+						</li>
+						<li>保障提升
+							<ul>
+								<li>茶水间</li>
+								<li>慰问</li>
+								<li>节假日礼品</li>
+								<li>员工家属</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</div>
+			<div class="right-div">
+				<li>文化活动
+					<ul>
+						<li>组建项目组</li>
+						<li>编制策划案</li>
+						<li>落地活动细节</li>
+						<li>宣传动员</li>
+						<li>现场执行</li>
+						<li>收尾工作</li>
+					</ul>
+				</li>
+				<li>日常互动
+					<ul>
+						<li>入职宣导</li>
+						<li>满意度调研</li>
+						<li>日常沟通</li>
+					</ul>
+				</li>
+			</div>
+
+
+		</ul>
+		<h2 id="%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86">办公环境管理</h2>
+		<ul>
+			<div class="left-div">
+				<li>选址</li>
+				<li>装修
+					<ul>
+						<li>需求确认</li>
+						<li>租赁办公区</li>
+						<li>装修设计</li>
+						<li>具体施工</li>
+						<li>搬迁入驻</li>
+					</ul>
+				</li>
+				<li>日常维护
+					<ul>
+						<li>空间布局管理</li>
+						<li>办公环境维护
+							<ul>
+								<li>制定规范</li>
+								<li>环境卫生
+									<ul>
+										<li>办公设备</li>
+										<li>桌椅地面</li>
+										<li>门窗楼道</li>
+									</ul>
+								</li>
+								<li>环境美化
+									<ul>
+										<li>日常美化
+											<ul>
+												<li>绿植</li>
+												<li>文化宣传</li>
+											</ul>
+										</li>
+										<li>特殊装饰
+											<ul>
+												<li>节日</li>
+												<li>纪念日</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</div>
+			<div class="right-div">
+				<li>设施设备
+					<ul>
+						<li>设备选择
+							<ul>
+								<li>选购调研</li>
+							</ul>
+						</li>
+						<li>设备应用
+							<ul>
+								<li>合理分配</li>
+								<li>前期培训</li>
+							</ul>
+						</li>
+						<li>维修保养
+							<ul>
+								<li>定期检查</li>
+								<li>定期保养</li>
+								<li>维修更换</li>
+							</ul>
+						</li>
+						<li>统筹管理
+							<ul>
+								<li>制定规范</li>
+								<li>供应商服务模式</li>
+								<li>实物管理
+									<ul>
+										<li>信息登记
+											<ul>
+												<li>基本信息</li>
+												<li>巡检信息</li>
+												<li>保养信息</li>
+												<li>维修信息</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</div>
+
+
+		</ul>
+		<h2 id="%E8%B4%B9%E7%94%A8%E7%AE%A1%E7%90%86">费用管理</h2>
+		<ul>
+			<div class="left-div">
+				<li>行政统支费用
+					<ul>
+						<li>办公室租赁费</li>
+						<li>物业管理费</li>
+						<li>装修改良费</li>
+						<li>水电能源费</li>
+						<li>保安保洁费</li>
+						<li>绿植维护费</li>
+						<li>低值易耗品采购费</li>
+						<li>网络通讯费</li>
+						<li>系统维护费</li>
+						<li>办公家具设备采购费</li>
+						<li>公共区域用品费</li>
+					</ul>
+				</li>
+			</div>
+			<div class="right-div">
+				<li>行政代支费用
+					<ul>
+						<li>差旅费</li>
+						<li>通讯费</li>
+						<li>印刷费</li>
+						<li>快递费</li>
+						<li>日常办公品采购费</li>
+					</ul>
+				</li>
+				<li>行政通用费用
+					<ul>
+						<li>人力资源费</li>
+						<li>资源使用费</li>
+						<li>日常运营费</li>
+					</ul>
+				</li>
+			</div>
+
+
+		</ul>
+		<h2 id="%E9%87%87%E8%B4%AD%E7%AE%A1%E7%90%86">采购管理</h2>
+		<ul>
+			<div class="left-div">
+				<li>行政产品、行政服务采购
+					<ul>
+						<li>品质与成本平衡</li>
+						<li>流程规范性
+							<ul>
+								<li>采购预算</li>
+								<li>供应商选择</li>
+								<li>下单签订合同</li>
+								<li>收验货品</li>
+							</ul>
+						</li>
+						<li>人员自身素养提高
+							<ul>
+								<li>专业
+									<ul>
+										<li>议价能力</li>
+										<li>比价能力</li>
+									</ul>
+								</li>
+								<li>品德
+									<ul>
+										<li>廉洁</li>
+										<li>谦逊</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</div>
+			<div class="right-div">
+				<li>供应链甄选
+					<ul>
+						<li>基本信息收集</li>
+						<li>明确认证标准</li>
+						<li>参考看样试用</li>
+					</ul>
+				</li>
+				<li>供应商管理
+					<ul>
+						<li>日常评价</li>
+						<li>共同成长</li>
+						<li>更新信息</li>
+					</ul>
+				</li>
+			</div>
+
+
+		</ul>
+		<div style="height: 200px;"></div>
+		<h2 id="%E8%B5%84%E4%BA%A7%E7%AE%A1%E7%90%86">资产管理</h2>
+		<ul>
+			<div class="left-div">
+				<li>固定资产
+					<ul>
+						<li>有形资产</li>
+						<li>无形资产</li>
+					</ul>
+				</li>
+				<li>低值易耗品</li>
+			</div>
+			<div class="right-div">
+				<li>管理原则
+					<ul>
+						<li>统一管理 分级负责</li>
+						<li>效益优先</li>
+						<li>分类管理</li>
+						<li>预算管理</li>
+						<li>账物相符</li>
+						<li>定期核查</li>
+					</ul>
+				</li>
+			</div>
+
+
+		</ul>
+		<h2 id="%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86">安全管理</h2>
+		<ul>
+			<div class="left-div">
+				<li>环境
+					<ul>
+						<li>公司内外部环境</li>
+						<li>消防安全</li>
+						<li>出入安全
+							<ul>
+								<li>门禁</li>
+								<li>胸卡</li>
+							</ul>
+						</li>
+						<li>重点位置
+							<ul>
+								<li>前台</li>
+								<li>机房</li>
+								<li>档案室</li>
+								<li>总裁室</li>
+							</ul>
+						</li>
+						<li>突发事件</li>
+					</ul>
+				</li>
+				<li>信息
+					<ul>
+						<li>研发 商业流程</li>
+						<li>保密信息日常管理及销毁</li>
+						<li>信息防护 管理员权限分配</li>
+						<li>文件流转管理</li>
+					</ul>
+				</li>
+			</div>
+			<div class="right-div">
+				<li>人员
+					<ul>
+						<li>活动安全</li>
+						<li>商旅安全</li>
+						<li>医疗救急</li>
+					</ul>
+				</li>
+				<li>财产
+					<ul>
+						<li>有形资产
+							<ul>
+								<li>标识</li>
+								<li>建账</li>
+								<li>调拨</li>
+								<li>追责</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</div>
+
+
+		</ul>
+		<div style="height: 300px;"></div>
+		<h2 id="%E6%96%87%E4%B9%A6%E6%A1%A3%E6%A1%88%E7%AE%A1%E7%90%86">文书档案管理</h2>
+		<ul>
+			<div class="left-div">
+				<li>档案管理
+					<ul>
+						<li>纸质档案
+							<ul>
+								<li>正式公文</li>
+								<li>工作计划与总结</li>
+								<li>会议记录</li>
+								<li>项目建议书</li>
+								<li>技术方案</li>
+								<li>设计图纸</li>
+								<li>会计账簿</li>
+								<li>合同</li>
+							</ul>
+						</li>
+						<li>电子档案
+							<ul>
+								<li>活动照片</li>
+								<li>活动视频</li>
+								<li>电子邮件</li>
+								<li>网站网页</li>
+								<li>结构化数据</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</div>
+			<div class="right-div">
+				<li>公文管理
+					<ul>
+						<li>撰写</li>
+						<li>签发</li>
+						<li>保存</li>
+						<li>销毁</li>
+					</ul>
+				</li>
+			</div>
+
+
+		</ul>
+		<h2 id="%E5%85%B6%E4%BB%96%E5%B7%A5%E4%BD%9C">其他工作</h2>
+		<ul>
+			<li>领导临时安排的其他行政工作</li>
+		</ul>
+	</div>
+</body>
+
+</html>
