@@ -266,7 +266,7 @@
 			border-style: solid;
 			border-width: 1px;
 			border-radius: 6px;
-			padding-bottom: 32px;
+			padding-bottom: 16px;
 		}
 
 		.lei-md .left-div {
@@ -767,6 +767,30 @@
 		.page {
 			page-break-after: always;
 		}
+
+		.everyday {
+			background: #d1f9d3;
+		}
+		.neseneary {
+			background: #ace7d6;
+		}
+		.not-addressed {
+			background: #bbbbbb;
+		}
+
+		.desc {
+			margin-top: 30px;
+			margin-bottom: -15px;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.desc p {
+			flex-grow: 1;
+			text-align: center;
+			font-size: 1rem;
+			font-weight: 500;
+		}
 	</style>
 
 	<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -774,10 +798,16 @@
 
 <body>
 	<div class="lei-md">
+		<div class="desc">
+			<p class="everyday">每日在做的工作内容</p>
+			<p class="not-addressed">暂未涉略的工作内容</p>
+			<p class="neseneary">有待完善的工作内容</p>
+		</div>
+		
 		<h2 id="%E6%97%A5%E5%B8%B8%E8%A1%8C%E6%94%BF%E6%9C%8D%E5%8A%A1">日常行政服务</h2>
 		<ul>
 			<div class="left-div">
-				<li>前台服务
+				<li class="everyday">前台服务
 					<ul>
 						<li>形象管理
 							<ul>
@@ -795,15 +825,15 @@
 										<li class="rm-list-style">无理取闹者</li>
 									</ul>
 								</li>
-								<li>电话来访接待</li>
+								<li class="not-addressed">电话来访接待</li>
 							</ul>
 						</li>
 						<li>物品转接</li>
 					</ul>
 				</li>
-				<li>会议服务与管理
+				<li class="everyday">会议服务与管理
 					<ul>
-						<li>会前准备
+						<li class="not-addressed">会前准备
 							<ul>
 								<li class="rm-list-style">时间</li>
 								<li class="rm-list-style">地点</li>
@@ -823,7 +853,7 @@
 								</li>
 							</ul>
 						</li>
-						<li>会中服务
+						<li class="not-addressed">会中服务
 							<ul>
 								<li>无需记录
 									<ul>
@@ -855,7 +885,7 @@
 				</li>
 			</div>
 			<div class="right-div">
-				<li>宴请接待
+				<li class="not-addressed">宴请接待
 					<ul>
 						<li>宴前准备
 							<ul>
@@ -886,7 +916,7 @@
 						</li>
 					</ul>
 				</li>
-				<li>差旅服务与管理
+				<li class="not-addressed">差旅服务与管理
 					<ul>
 						<li>确定服务模式</li>
 						<li>人员服务
@@ -914,14 +944,20 @@
 						</li>
 					</ul>
 				</li>
-				<li>收发服务</li>
+				<li class="everyday">收发服务</li>
 			</div>
 		</ul>
+
+		<div class="desc">
+			<p class="everyday">每日在做的工作内容</p>
+			<p class="not-addressed">暂未涉略的工作内容</p>
+			<p class="neseneary">有待完善的工作内容</p>
+		</div>
 
 		<h2 id="%E5%91%98%E5%B7%A5%E5%85%B3%E6%80%80%E6%B4%BB%E5%8A%A8">员工关怀活动</h2>
 		<ul>
 			<div class="left-div">
-				<li>员工福利
+				<li class="not-addressed">员工福利
 					<ul>
 						<li>基本保障
 							<ul>
@@ -942,7 +978,7 @@
 				</li>
 			</div>
 			<div class="right-div">
-				<li>文化活动
+				<li class="not-addressed">文化活动
 					<ul>
 						<li>组建项目组</li>
 						<li>编制策划案</li>
@@ -952,7 +988,7 @@
 						<li>收尾工作</li>
 					</ul>
 				</li>
-				<li>日常互动
+				<li class="not-addressed">日常互动
 					<ul>
 						<li>入职宣导</li>
 						<li>满意度调研</li>
@@ -964,10 +1000,10 @@
 
 		</ul>
 		<h2 id="%E5%8A%9E%E5%85%AC%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86">办公环境管理</h2>
-		<ul>
+		<ul style="padding-bottom: 15px;">
 			<div class="left-div">
-				<li>选址</li>
-				<li>装修
+				<li class="not-addressed">选址</li>
+				<li class="not-addressed">装修
 					<ul>
 						<li>需求确认</li>
 						<li>租赁办公区</li>
@@ -976,7 +1012,7 @@
 						<li>搬迁入驻</li>
 					</ul>
 				</li>
-				<li>日常维护
+				<li class="everyday">日常维护
 					<ul>
 						<li>空间布局管理</li>
 						<li>办公环境维护
@@ -994,10 +1030,10 @@
 										<li>日常美化
 											<ul>
 												<li>绿植</li>
-												<li>文化宣传</li>
+												<li class="neseneary">文化宣传</li>
 											</ul>
 										</li>
-										<li>特殊装饰
+										<li class="neseneary">特殊装饰
 											<ul>
 												<li>节日</li>
 												<li>纪念日</li>
@@ -1011,7 +1047,7 @@
 				</li>
 			</div>
 			<div class="right-div">
-				<li>设施设备
+				<li class="everyday">设施设备
 					<ul>
 						<li>设备选择
 							<ul>
@@ -1052,13 +1088,18 @@
 					</ul>
 				</li>
 			</div>
-
-
 		</ul>
+
+		<div class="desc">
+			<p class="everyday">每日在做的工作内容</p>
+			<p class="not-addressed">暂未涉略的工作内容</p>
+			<p class="neseneary">有待完善的工作内容</p>
+		</div>
+
 		<h2 id="%E8%B4%B9%E7%94%A8%E7%AE%A1%E7%90%86">费用管理</h2>
 		<ul>
 			<div class="left-div">
-				<li>行政统支费用
+				<li class="everyday">行政统支费用
 					<ul>
 						<li>办公室租赁费</li>
 						<li>物业管理费</li>
@@ -1075,7 +1116,7 @@
 				</li>
 			</div>
 			<div class="right-div">
-				<li>行政代支费用
+				<li class="everyday">行政代支费用
 					<ul>
 						<li>差旅费</li>
 						<li>通讯费</li>
@@ -1084,7 +1125,7 @@
 						<li>日常办公品采购费</li>
 					</ul>
 				</li>
-				<li>行政通用费用
+				<li class="everyday">行政通用费用
 					<ul>
 						<li>人力资源费</li>
 						<li>资源使用费</li>
@@ -1098,7 +1139,7 @@
 		<h2 id="%E9%87%87%E8%B4%AD%E7%AE%A1%E7%90%86">采购管理</h2>
 		<ul>
 			<div class="left-div">
-				<li>行政产品、行政服务采购
+				<li class="not-addressed">行政产品、行政服务采购
 					<ul>
 						<li>品质与成本平衡</li>
 						<li>流程规范性
@@ -1129,14 +1170,14 @@
 				</li>
 			</div>
 			<div class="right-div">
-				<li>供应链甄选
+				<li class="not-addressed">供应链甄选
 					<ul>
 						<li>基本信息收集</li>
 						<li>明确认证标准</li>
 						<li>参考看样试用</li>
 					</ul>
 				</li>
-				<li>供应商管理
+				<li class="not-addressed">供应商管理
 					<ul>
 						<li>日常评价</li>
 						<li>共同成长</li>
@@ -1147,19 +1188,19 @@
 
 
 		</ul>
-		<div style="height: 200px;"></div>
+		<!-- <div style="height: 200px;"></div> -->
 		<h2 id="%E8%B5%84%E4%BA%A7%E7%AE%A1%E7%90%86">资产管理</h2>
 		<ul>
 			<div class="left-div">
-				<li>固定资产
+				<li class="everyday">固定资产
 					<ul>
 						<li>有形资产</li>
 						<li>无形资产</li>
 					</ul>
 				</li>
-				<li>低值易耗品</li>
+				<li class="everyday">低值易耗品</li>
 			</div>
-			<div class="right-div">
+			<!-- <div class="right-div">
 				<li>管理原则
 					<ul>
 						<li>统一管理 分级负责</li>
@@ -1170,14 +1211,19 @@
 						<li>定期核查</li>
 					</ul>
 				</li>
-			</div>
-
-
+			</div> -->
 		</ul>
-		<h2 id="%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86">安全管理</h2>
+
+		<div class="desc">
+			<p class="everyday">每日在做的工作内容</p>
+			<p class="not-addressed">暂未涉略的工作内容</p>
+			<p class="neseneary">有待完善的工作内容</p>
+		</div>
+
+		<h2 id="%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86" style="margin-top: 10px!important;">安全管理</h2>
 		<ul>
 			<div class="left-div">
-				<li>环境
+				<li class="neseneary">环境
 					<ul>
 						<li>公司内外部环境</li>
 						<li>消防安全</li>
@@ -1198,7 +1244,9 @@
 						<li>突发事件</li>
 					</ul>
 				</li>
-				<li>信息
+			</div>
+			<div class="right-div">
+				<li class="not-addressed">信息
 					<ul>
 						<li>研发 商业流程</li>
 						<li>保密信息日常管理及销毁</li>
@@ -1206,16 +1254,14 @@
 						<li>文件流转管理</li>
 					</ul>
 				</li>
-			</div>
-			<div class="right-div">
-				<li>人员
+				<li class="not-addressed">人员
 					<ul>
 						<li>活动安全</li>
 						<li>商旅安全</li>
 						<li>医疗救急</li>
 					</ul>
 				</li>
-				<li>财产
+				<li class="not-addressed">财产
 					<ul>
 						<li>有形资产
 							<ul>
@@ -1231,11 +1277,11 @@
 
 
 		</ul>
-		<div style="height: 230px;"></div>
-		<h2 id="%E6%96%87%E4%B9%A6%E6%A1%A3%E6%A1%88%E7%AE%A1%E7%90%86">文书档案管理</h2>
-		<ul>
+		<!-- <div style="height: 300px;"></div> -->
+		<h2 id="%E6%96%87%E4%B9%A6%E6%A1%A3%E6%A1%88%E7%AE%A1%E7%90%86" style="margin-top: 0!important;">文书档案管理</h2>
+		<ul style="padding-bottom: 5px;">
 			<div class="left-div">
-				<li>档案管理
+				<li class="not-addressed">档案管理
 					<ul>
 						<li>纸质档案
 							<ul>
@@ -1262,7 +1308,7 @@
 				</li>
 			</div>
 			<div class="right-div">
-				<li>公文管理
+				<li class="not-addressed">公文管理
 					<ul>
 						<li>撰写</li>
 						<li>签发</li>
@@ -1274,8 +1320,9 @@
 
 
 		</ul>
-		<h2 id="%E5%85%B6%E4%BB%96%E5%B7%A5%E4%BD%9C">其他工作</h2>
-		<ul>
+
+		<h2 id="%E5%85%B6%E4%BB%96%E5%B7%A5%E4%BD%9C" style="margin-top: 0!important;">其他工作</h2>
+		<ul class="everyday">
 			<li>领导临时安排的其他行政工作</li>
 		</ul>
 	</div>
