@@ -533,8 +533,19 @@
 			list-style-type: circle;
 		}
 
-		.lei-md>ul>ul>ul {
-			list-style-type: square;
+		.lei-md ul ul ul {
+			list-style-type: none!important;
+    		margin-left: 0!important;
+		}
+
+		.lei-md ul ul ul li {
+			list-style-type: none!important;
+    		margin-left: 0!important;
+		}
+
+		.lei-md ul ul ul li li {
+			list-style-type: none!important;
+    		margin-left: 0!important;
 		}
 
 		.lei-md>ol {
@@ -550,6 +561,11 @@
 			list-style-type: lower-roman;
 		}
 
+		.rm-list-style {
+			list-style-type: none;
+    		margin-left: 0;
+		}
+
 		.lei-md li,
 		.lei-md li p,
 		.lei-md li section,
@@ -557,6 +573,8 @@
 		.lei-md li * {
 			font-size: 14px;
 		}
+
+		.lei-md 
 
 		.lei-md hr {
 			box-sizing: border-box;
@@ -763,18 +781,18 @@
 					<ul>
 						<li>形象管理
 							<ul>
-								<li>个人形象</li>
-								<li>办公环境</li>
+								<li class="rm-list-style">个人形象</li>
+								<li class="rm-list-style">办公环境</li>
 							</ul>
 						</li>
 						<li>接待工作
 							<ul>
 								<li>到场来访接待
 									<ul>
-										<li>已预约</li>
-										<li>未预约</li>
-										<li>内部人员</li>
-										<li>无理取闹者</li>
+										<li class="rm-list-style">已预约</li>
+										<li class="rm-list-style">未预约</li>
+										<li class="rm-list-style">内部人员</li>
+										<li class="rm-list-style">无理取闹者</li>
 									</ul>
 								</li>
 								<li>电话来访接待</li>
@@ -787,10 +805,10 @@
 					<ul>
 						<li>会前准备
 							<ul>
-								<li>时间</li>
-								<li>地点</li>
-								<li>人员</li>
-								<li>需求</li>
+								<li class="rm-list-style">时间</li>
+								<li class="rm-list-style">地点</li>
+								<li class="rm-list-style">人员</li>
+								<li class="rm-list-style">需求</li>
 							</ul>
 						</li>
 						<li>环境准备
@@ -1213,7 +1231,7 @@
 
 
 		</ul>
-		<div style="height: 300px;"></div>
+		<div style="height: 230px;"></div>
 		<h2 id="%E6%96%87%E4%B9%A6%E6%A1%A3%E6%A1%88%E7%AE%A1%E7%90%86">文书档案管理</h2>
 		<ul>
 			<div class="left-div">
